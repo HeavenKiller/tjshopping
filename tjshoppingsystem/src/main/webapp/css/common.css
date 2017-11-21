@@ -1,0 +1,371 @@
+body{
+	margin: 0;
+	width: 1348px;
+	background-color: beige;
+	font: 100%/1.2 Georgia, "Times New Roman", serif;
+}
+
+a{
+	color: #292929;;
+}
+
+.masthead,
+#main-nav,
+#mnm-special,
+.sub-entry
+{
+	display: block;
+}
+
+#nav-li li,
+#main-nav-left li,
+#mnm-special li,
+.sub-entry li{
+	list-style: none;
+	display: inline-block;
+}	
+
+#nav-li a,
+#main-nav-left a,
+.user-login a,
+.mnr-other-info a,
+#mnr-casousel a,
+.sub-entry a{
+	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+}
+
+#nav-li a:hover,
+#main-nav-left a:hover,
+.user-login a:hover,
+.mnr-other-info a:hover,
+#mnr-casousel a:hover,
+.sub-entry a:hover{
+	color: #019443;
+}
+
+.afont{
+	font-size:2em;
+}
+
+/* 对公共属性的处理结束 */
+
+/* masthead 开始 */
+.masthead{
+	padding: 0em 0.8em 0em 0.8em;
+	text-align: center;
+}
+
+.logo {
+	float: left;
+}
+
+.search {
+	padding-top: 3em;
+}
+
+#search-text{
+	width:15em;
+}
+
+#search-text, #search-button{
+	padding: 0.5em;
+	font-size: 1.6em;
+	border: 1px solid #566963;
+	border-radius: 0.5em;
+}
+/* masthead 结束*/
+
+/* temp-nav 开始*/
+#temp-nav{
+	margin-top: 1.5em;
+}
+
+#true-nav{
+	height: 3.5em;
+	width: 1348px;
+	background-color:white;
+}
+
+.fixer{
+	top:0;
+	position: fixed;
+	z-index: 9999;
+}
+/* temp-nav结束 */
+
+#nav-li{
+	border-top: .5em solid #019443;
+	border-bottom: .1em solid #c8c8c8;
+}
+
+#nav-li li{
+	padding: .25em 1em .25em 1em;
+}	
+
+#nav-li a{
+	font-size: 2em;
+}
+
+/*#user-nav{
+	display: none;	
+}*/
+
+#user-nav ul li a{
+	font-size: 1.5em;
+}
+
+#user-nav,
+#login-control,
+#register-control{
+	float: right;
+}
+
+/* 对main操作开始*/
+.main{
+	margin-left: 5em;
+	margin-right: 5em;
+}
+
+/* 对main-nav 的操作开始*/
+.main-nav{
+	padding-top: .1em;
+}
+
+#main-nav-left,
+#main-nav-middle,
+#main-nav-right{
+	display: inline-block;
+}
+
+#main-nav-left{
+	width: 20%;
+	float: left;
+}
+	
+#main-nav-middle{
+	width: 50%;
+}
+	
+#main-nav-right{
+	width: 30%;
+	float: right;
+}
+
+/* 对main-nav-left 的操作开始*/
+#main-nav-left ul{
+	margin: 0;
+	padding-left: 1em;
+	padding-right: 2em;
+}
+
+#main-nav-left li{
+	padding: .3em .5em .3em .5em;
+}
+
+#main-nav-left a{
+	font-size: 1.5em;
+}
+
+#main-nav-left h5{
+	margin: 0;
+	padding-top: .6em;
+	padding-left: 1em;
+}
+
+
+.other-span{
+	font-size: 1.2em;
+	display: inline-block;
+	padding:.6em 1.5em 0 1.5em;
+}
+/* 对main-nav-left 的操作结束*/
+
+/* 对main-nav-middle操作 开始*/
+#mnm-special ul{
+	padding: .2em 0 0 0;
+}
+
+#mnm-special li{
+	width: 33%;
+}
+/* 对main-nav-middle操作 结束*/
+
+/* 对main-nav-right 操作开始*/
+#userImg{
+	width: 10em;
+	height: 10em;
+	float: left;
+}
+
+#user-login-control{
+	margin-left: 12em;
+}
+
+.nickname{
+	padding-top: 1em;
+	font-size: 1.75em;
+	font-weight: 500;
+}
+
+.user-login,
+.mnr-other-info{
+	padding-top: .6em;
+	padding-bottom: .6em;
+}
+
+.user-login a{
+	font-size: 1.5em;
+}
+
+.mnr-other-info{
+	padding-bottom: 1em;
+}
+
+.mnr-other-info a{
+	font-size: 1.25em;
+	padding-right: 1em;
+}
+
+.sign-getJ{
+	text-align: center;
+	padding-top: 1em;
+}
+
+.sign-getjf{
+	font-size: 2em;
+	padding-left: 2em;
+	padding-right: 2em;
+	border-radius: 0.5em;
+	border: 1px solid saddlebrown;
+	background-color: beige;
+	cursor: pointer;
+}
+
+/* 对头条的操作开始 */
+.headline{
+	margin-top: 1.5em;
+	margin-left: 1em;
+	/*background-color: red;*/
+}
+
+.headline span{
+	margin-top: .5em;
+	font-size: 1.75em;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+}
+
+#mnr-casousel{
+	padding-top: .5em;
+	font-size: 1.5em;
+}
+
+
+#mnr-casousel a{
+	padding-top: 1em;
+}
+/* 对头条的操作结束*/
+
+.sub-entry{
+	width: 100%;
+	margin-top: 3em;
+}
+
+.sub-entry ul{
+	padding: 0;
+}
+
+.sub-entry li{
+	width: 24.5%;
+	height: 8.45em;
+	text-align: center;
+	border: 1px solid white;
+}
+
+.sub-entry li img{
+	width: 50%;
+	height: 50%;
+	margin-top: 1.5em;
+}
+
+.sub-entry li span{
+	font-size: 1.5em;
+}
+/* 对main-nav-right的操作结束*/
+/* 对main-nav 的操作结束*/
+
+/* 对contain 的操作开始*/
+.contain{
+	margin-top: 1em;
+	height: 10em;
+	width: 100%;
+/*	background-color: greenyellow;*/
+}
+
+
+/* 对main的操作结束*/
+
+
+/* 对login的操作*/
+#login{
+	height:50em;
+	width:40em;
+	text-align:center;
+}
+
+.input-control { 
+	width: 80%; 
+	height: 34px; 
+	padding: 6px 12px; 
+	font-size: px; 
+	line-height: 1.428571429; 
+	color: #555555; 
+	vertical-align: middle; 
+	background-color: #ffffff; 
+	border: 1px solid #cccccc; 
+	border-radius: 4px; 
+}
+
+.input-control:focus { 
+	border-color: #66afe9; 
+	outline: 0; 
+}
+	
+.myButton {	
+	background-color:#768d87;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:0px -1px 0px #2b665e;
+}
+
+.myButton:hover {
+	background-color:#6c7c7c;
+}
+
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+#login label{
+	font-size:1.75em;
+}
+
+/* 评论分页 
+.pagination li{
+	margin:0 1em;
+}
+*/

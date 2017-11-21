@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	
+	<!-- spring mvc扫描control -->
+	<context:component-scan base-package="tjweb.control"></context:component-scan>
+	
+	<!-- 使用如下两个class激活@RequestMapping annotation -->  
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	
+	<!-- 设置不过滤内容，比如:css,jquery,img 等资源文件 -->   
+	<mvc:resources location="/css/*" mapping="/css/**" />
+	<mvc:resources location="/js/*" mapping="/js/**" />  
+	<mvc:resources location="/images/*" mapping="/images/**" />
+	<mvc:resources location="/userdoc/*" mapping="/userdoc/**" />
+	<mvc:resources location="/fonts/*" mapping="/fonts/**"></mvc:resources>
+	
+	<!-- 对转向页面的路径解析。prefix：前缀， suffix：后缀 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+    <bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/html;charset=UTF-8</value>
+			</list>
+		</property>
+		<property name="objectMapper">    
+            <bean class="com.fasterxml.jackson.databind.ObjectMapper">    
+            	<property name="dateFormat">    
+                	<bean class="java.text.SimpleDateFormat">    
+                    	<constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />    
+                    	<!--<constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />  -->
+                    </bean>    
+                </property>    
+           	</bean>    
+       	</property> 
+	</bean>
+	
+	<!-- 去除返回字符串时的引号 -->  
+    <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter" />
+	
+	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 --> 
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<!-- json转换器   -->
+				<ref bean="stringHttpMessageConverter" />
+				<ref bean="mappingJacksonHttpMessageConverter" />
+				
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 改 -->
+	<!--
+	 避免IE执行AJAX时,返回JSON出现下载文件 
+	<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/html;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	-->
+	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				 json转换器  
+				<ref bean="mappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>--> 
+	
+	<!-- 支持上传文件 -->  
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<!-- 文件大小限制10m -->
+    	<property name="maxUploadSize" value="10485760" />
+    	<property name="maxInMemorySize" value="1024" />
+    	<property name="defaultEncoding" value="UTF-8" />
+    	<property name="uploadTempDir" value="upload/temp" />
+    </bean>  
+</beans>  
